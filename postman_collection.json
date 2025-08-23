@@ -1,0 +1,20 @@
+{
+  "info": {
+    "name": "Mortgage Risk Engine",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Score Loan",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"borrower\": {\"income\": 95000, \"age\": 34, \"employment_type\": \"gig\", \"credit_score\": 665, \"repayment_history\": {\"missed_payments_12m\": 2}},\n  \"loan\": {\"amount\": 350000, \"interest_rate\": 8.1, \"ltv\": 0.86},\n  \"property\": {\"location\": {\"country\":\"IN\",\"state\":\"KA\"}, \"value\": 405000}\n}"
+        },
+        "url": { "raw": "http://localhost:8000/score", "host": ["localhost"], "port": "8000", "path": ["score"] }
+      }
+    }
+  ]
+}
