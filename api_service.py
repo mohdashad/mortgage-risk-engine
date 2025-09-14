@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from modules.data_input import DataInputValidator
 from modules.preprocessing import DataPreprocessor
 from modules.feature_engineering import FeatureEngineer
-from modules.risk_scoring import RiskScorer
+from modules.ml_risk_scoring import AIRiskScorer
 
 app = FastAPI(title="AI Loan Risk Scoring API", version="1.0.0")
 
@@ -39,7 +39,7 @@ def score(data: BorrowerInput):
         engineered = engineer.calculate_features(processed, data)
 
         # Step 4: Risk Scoring
-        scorer = RiskScorer()
+        scorer = AIRiskScorer()
         risk_result = scorer.calculate_risk(engineered)
 
         return risk_result
