@@ -9,7 +9,7 @@ app = FastAPI(title="AI Loan Risk Scoring API", version="1.0.0")
 
 # Pydantic Model for request validation
 class BorrowerInput(BaseModel):
-    borrower_details: dict
+    borrower_profile: dict
     loan_details: dict
     property_details: dict
     fraud_risk_signals: dict

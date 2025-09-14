@@ -21,7 +21,7 @@ class DataPreprocessor:
         processed = {}
 
         # --- Borrower details ---
-        borrower = data.get("borrower_details", {})
+        borrower = data.get("borrower_profile", {})
         income = borrower.get("income", 0)
         credit_score = borrower.get("credit_score", 0)
 
@@ -64,7 +64,7 @@ class DataPreprocessor:
 
 if __name__ == "__main__":
     sample_input = {
-        "borrower_details": { "income": 45000, "employment_type": "self-employed", "credit_score": 610 },
+        "borrower_profile": { "income": 45000, "employment_type": "self-employed", "credit_score": 610 },
         "loan_details": { "loan_amount": 250000, "interest_rate": 7.5, "tenure_years": 15 },
         "property_details": { "market_value": 280000, "price_trend": "falling" },
         "fraud_risk_signals": { "document_consistency_check": "failed" },

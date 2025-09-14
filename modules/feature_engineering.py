@@ -11,7 +11,7 @@ class FeatureEngineer:
         features = {}
 
         # ---------------- Borrower Features ----------------
-        borrower = raw_input.get("borrower_details", {})
+        borrower = raw_input.get("borrower_profile", {})
         features["income"] = borrower.get("income", 0)
         features["age"] = borrower.get("age", 0)
         features["credit_score_normalized"] = borrower.get("credit_score", 600) / 850.0
@@ -79,7 +79,7 @@ class FeatureEngineer:
 
 if __name__ == "__main__":
     sample_input = {
-        "borrower_details": { "income": 45000, "employment_type": "self-employed", "credit_score": 610 },
+        "borrower_profile": { "income": 45000, "employment_type": "self-employed", "credit_score": 610 },
         "loan_details": { "loan_amount": 250000, "interest_rate": 7.5, "tenure_years": 15 },
         "property_details": { "market_value": 280000, "price_trend": "falling" },
         "fraud_risk_signals": { "document_consistency_check": "failed" },
